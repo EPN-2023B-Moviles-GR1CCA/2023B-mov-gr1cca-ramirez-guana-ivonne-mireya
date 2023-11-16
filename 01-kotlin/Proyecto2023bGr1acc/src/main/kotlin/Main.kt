@@ -1,27 +1,28 @@
-fun main() {
-    println("Hola mundo!")
+fun main() {    println("Hola mundo")
+    // INMUTABLES (NO se reasignan "=")
+    val inmutable: String = "Adrian";
+    // inmutable = "Vicente";
 
-   //inmutables (no se reasignan "=")
-    val inmutable : String = "Ivonne;" ;
-    //inmutable = "Mireya"
     // Mutables (Re asignar)
-    var mutable: String = "Mireya";
-    mutable = "Ivonne";
+    var mutable: String = "Vicente";
+    mutable = "Adrian";
 
-    //val>var
-    //duck typing
-    var ejemploVariable=" Ivonne Ramirez"
-    val edadEjemplo:Int=12
+    //  val > var
+    // Duck Typing
+    var ejemploVariable = " Adrian Eguez "
+    val edadEjemplo: Int = 12
     ejemploVariable.trim()
-    // ejemploVariable= edadEjemplo;
+    // ejemploVariable = edadEjemplo;
 
     // Variable primitiva
     val nombreProfesor: String = "Adrian Eguez"
     val sueldo: Double = 1.2
     val estadoCivil: Char = 'C'
     val mayorEdad: Boolean = true
-// Clases Java
+    // Clases Java
     val fechaNacimiento: Date = Date()
+
+
     // SWITCH
     val estadoCivilWhen = "C"
     when (estadoCivilWhen){
@@ -36,6 +37,25 @@ fun main() {
         }
     }
     val coqueteo = if (estadoCivilWhen == "S") "Si" else "No"
-}
 
+}
+// void -> Unit
+fun imprimirNombre(nombre: String): Unit{
+    // "Nombre: " + variable + " bienvenido";
+    println("Nombre : ${nombre}")
+}
+fun calcularSueldo(
+    sueldo: Double, // Requerido
+    tasa: Double = 12.00, // Opcional (defecto)
+    bonoEspecial: Double? = null, // Opcion null -> nullable
+): Double{
+    // Int -> Int? (nullable)
+    // String -> String? (nullable)
+    // Date -> Date? (nullable)
+    if(bonoEspecial == null){
+        return sueldo * (100/tasa)
+    }else{
+        bonoEspecial.dec()
+        return sueldo * (100/tasa ) + bonoEspecial
+    }
 }
