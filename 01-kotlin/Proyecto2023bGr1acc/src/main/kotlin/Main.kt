@@ -3,12 +3,12 @@ import java.util.*
 fun main(){
     println("Hola mundo")
     // INMUTABLES (NO se reasignan "=")
-    val inmutable: String = "Adrian";
+    val inmutable: String = "Ivonne";
     // inmutable = "Vicente";
 
     // Mutables (Re asignar)
-    var mutable: String = "Vicente";
-    mutable = "Adrian";
+    var mutable: String = "Mireya";
+    mutable = "Ivonne";
 
 
 
@@ -21,13 +21,13 @@ fun main(){
 
     //  val > var
     // Duck Typing
-    var ejemploVariable = " Adrian Eguez "
+    var ejemploVariable = " mireya ramirez "
     val edadEjemplo: Int = 12
     ejemploVariable.trim()
     // ejemploVariable = edadEjemplo;
 
     // Variable primitiva
-    val nombreProfesor: String = "Adrian Eguez"
+    val nombreProfesor: String = "mireya ramirezz"
     val sueldo: Double = 1.2
     val estadoCivil: Char = 'C'
     val mayorEdad: Boolean = true
@@ -64,7 +64,9 @@ fun main(){
     calcularSueldo(bonoEspecial = 20.00, sueldo = 10.00, tasa = 14.00) //  Parametros nombrados
 
 
-
+    val sumaUno = Suma(1,1)
+    val sumaDos = Suma(null, 1)
+    val sumaTres = Suma(1, null)
 
 
 
@@ -143,12 +145,6 @@ class Suma( // Constructor Primario Suma
 
 
 }
-
-
-
-
-
-
 // void -> Unit
 fun imprimirNombre(nombre: String): Unit{
     // "Nombre: " + variable + " bienvenido";
