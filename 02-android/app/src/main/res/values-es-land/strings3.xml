@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gr1accimrg2023b</string>
+    <string name="texto_saludo">HOLA ES-LAND</string>
+    <color name="ejemplo_color">#FFEB3B</color>
+    <color name="background">#00BCD4</color>
+</resources>
