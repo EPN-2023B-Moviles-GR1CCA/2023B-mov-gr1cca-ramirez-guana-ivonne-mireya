@@ -1,3 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Gr1accimrg2023b</string>
+    <string name="texto_saludo">HOLA PORT-EN</string>
+    <color name="ejemplo_color">#03F7FF</color>
+    <color name="background">#DDFF00A1</color>
 </resources>
