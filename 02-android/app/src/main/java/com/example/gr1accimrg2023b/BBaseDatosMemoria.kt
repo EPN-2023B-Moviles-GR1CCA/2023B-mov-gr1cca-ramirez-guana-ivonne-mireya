@@ -1,22 +1,22 @@
-package com.example.gr1accvaes2023b
-
+package com.example.gr1accimrg2023b
 class BBaseDatosMemoria {
     // COMPANION OBJECT
-    companion object {
-        val arregloBEntrenador = arrayListOf<BEntrenador>()
+    companion object{
+        val arregloBEntrenador= arrayListOf<BEntrenador>()
         init {
             arregloBEntrenador
                 .add(
-                    BEntrenador(1, "Adrian", "a@a.com")
+                    BEntrenador(1, "mireya","a@a.com")
                 )
             arregloBEntrenador
                 .add(
-                    BEntrenador(2,"Vicente", "b@b.com")
+                    BEntrenador(2, "ivonne","b@b.com")
                 )
             arregloBEntrenador
                 .add(
-                    BEntrenador(3, "Carolina", "c@c.com")
+                    BEntrenador(3, "raul","c@c.com")
                 )
+
         }
     }
 }
