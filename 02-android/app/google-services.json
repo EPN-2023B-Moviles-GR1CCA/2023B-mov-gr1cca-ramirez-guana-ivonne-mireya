@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "915718138597",
+    "project_id": "b2023-gr1acc-imrg",
+    "storage_bucket": "b2023-gr1acc-imrg.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:915718138597:android:0ebdcf637d41b601a2820c",
+        "android_client_info": {
+          "package_name": "com.example.gr1accimrg2023b"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMK-Ee9PgDs4-XV_MKlAxTsuNZowrA-J8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

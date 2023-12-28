@@ -2,4 +2,10 @@
     <string name="app_name">Gr1accvaes2023b</string>
     <string name="texto_saludo">Hola</string>
     <color name="ejemplo_color">#FFFFFFFF</color>
+    //areglo de strings con los items
+    <string-array name="string_array_opciones_dialogo">
+        <item>lunes</item>
+        <item>martes</item>
+        <item>miercoles</item>
+    </string-array>
 </resources>
