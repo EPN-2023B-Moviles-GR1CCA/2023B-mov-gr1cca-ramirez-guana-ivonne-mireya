@@ -1,0 +1,2 @@
+{"id":1,"nHistorial":2,"fecha":"Dec 27, 2021, 12:00:00 AM","esPresencial":true,"motivo":"fractrura","peso":25.5,"observaciones":["separacion"],"recomendaciones":"del"}
+{"id":2,"nHistorial":2,"fecha":"Dec 27, 2021, 12:00:00 AM","esPresencial":false,"motivo":"lesion","peso":29.3,"observaciones":["lesion"],"recomendaciones":"daño"}

@@ -1,0 +1,2 @@
+{"id":1,"nombre":"peludo","especie":"perro","fechaNacimiento":"Dec 31, 2001, 12:00:00 AM","frecuenciaCardiaca":24.9,"estaEsterilizado":true,"nivelAdiestramiento":1,"consultas":[]}
+{"id":2,"nombre":"chichi","especie":"gato","fechaNacimiento":"Feb 2, 2019, 12:00:00 AM","frecuenciaCardiaca":12.3,"estaEsterilizado":false,"nivelAdiestramiento":2,"consultas":[{"id":1,"nHistorial":2,"fecha":"Dec 27, 2021, 12:00:00 AM","esPresencial":true,"motivo":"fractrura","peso":25.5,"observaciones":["separacion"],"recomendaciones":"del"}]}
