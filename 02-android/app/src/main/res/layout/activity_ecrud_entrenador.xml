@@ -2,8 +2,80 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_sqlite"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ECrudEntrenador">
 
+    <EditText
+        android:id="@+id/input_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Ingrese id"
+        app:layout_constraintEnd_toEndOf="@+id/input_nombre"
+        app:layout_constraintStart_toStartOf="@+id/input_nombre"
+        tools:layout_editor_absoluteY="57dp" />
+
+    <Button
+        android:id="@+id/btn_crear_bdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CREAR"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/input_descripcion"
+        app:layout_constraintStart_toStartOf="@+id/input_descripcion"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_buscar_bdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BUSCAR"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_crear_bdd"
+        app:layout_constraintTop_toTopOf="@+id/btn_crear_bdd"
+        tools:layout_editor_absoluteX="34dp" />
+
+    <Button
+        android:id="@+id/btn_actualiza_bdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ACTUALIZAR"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_crear_bdd"
+        app:layout_constraintTop_toTopOf="@+id/btn_crear_bdd"
+        tools:layout_editor_absoluteX="273dp" />
+
+    <Button
+        android:id="@+id/btn_eliminar_bdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="ELIMINAR"
+        app:layout_constraintEnd_toEndOf="@+id/input_descripcion"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="@+id/input_descripcion"
+        app:layout_constraintTop_toBottomOf="@+id/btn_crear_bdd" />
+
+    <EditText
+        android:id="@+id/input_nombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Ingrese nombre"
+        app:layout_constraintEnd_toEndOf="@+id/input_descripcion"
+        app:layout_constraintStart_toStartOf="@+id/input_descripcion"
+        tools:layout_editor_absoluteY="115dp" />
+
+    <EditText
+        android:id="@+id/input_descripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="104dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Ingrese Descripcion"
+        app:layout_constraintBottom_toTopOf="@+id/btn_crear_bdd"
+        tools:layout_editor_absoluteX="91dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
