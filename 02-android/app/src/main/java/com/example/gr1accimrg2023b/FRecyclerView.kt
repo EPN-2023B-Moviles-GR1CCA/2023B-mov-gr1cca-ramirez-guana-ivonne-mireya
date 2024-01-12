@@ -26,7 +26,7 @@ class FRecyclerView : AppCompatActivity() {
             .LinearLayoutManager(this)
         adaptador.notifyDataSetChanged()
     }
-    fun aumentalTotalLikes()
+    fun aumentarTotalLikes()
     {
         totalLikes= totalLikes + 1
         val totalLikesTextView= findViewById<TextView>(
