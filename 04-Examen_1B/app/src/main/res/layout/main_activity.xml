@@ -1,7 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:orientation="vertical"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraint_Mascota"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2CFF9800"
+    android:orientation="vertical"
 
-</LinearLayout>
+    >
+
+    <TextView
+        android:id="@+id/tv_Bienvenido"
+        android:layout_width="412dp"
+        android:layout_height="86dp"
+        android:background="#83FF9800"
+        android:padding="18dp"
+        android:text="Bienvenido a Mascotas"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btn_Crear"
+        android:layout_width="78dp"
+        android:layout_height="45dp"
+        android:background="#FFFFFF"
+        android:padding="14dp"
+        android:radius="25dp"
+        android:text="Crear"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Bienvenido"
+
+        app:layout_constraintVertical_bias="0.676" />
+
+    <ListView
+        android:id="@+id/ls_Mascota"
+        android:layout_width="269dp"
+        android:layout_height="372dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.312" />
+
+    <ImageView
+
+        android:id="@+id/imageView"
+        android:layout_width="260dp"
+        android:layout_height="170dp"
+        android:background="@drawable/pngwing_com"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.536"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:layout_constraintVertical_bias="0.971">
+
+    </ImageView>
+</androidx.constraintlayout.widget.ConstraintLayout>
