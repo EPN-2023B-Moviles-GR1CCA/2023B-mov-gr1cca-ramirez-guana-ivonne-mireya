@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2CFF9800"
+    tools:context=".ver_Consulta">
+
+
+    <Button
+        android:id="@+id/btn_CrearConsultas"
+        android:layout_width="191dp"
+        android:layout_height="55dp"
+        android:layout_marginEnd="188dp"
+        android:background="#FFFFFF"
+        android:text="Crear"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_padreVerConsultas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lv_Consulta"
+        app:layout_constraintVertical_bias="0.564" />
+
+    <ImageView
+
+        android:id="@+id/imageView"
+        android:layout_width="125dp"
+        android:layout_height="189dp"
+        android:background="@drawable/a"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.863"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.97">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/tv_Bienvenido"
+        android:layout_width="412dp"
+        android:layout_height="86dp"
+        android:background="#83FF9800"
+        android:padding="18dp"
+        android:text="Bienvenido a Consultas"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tv_padreVerConsultas"
+        android:layout_width="136dp"
+        android:layout_height="65dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CrearConsultas"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ListView
+        android:id="@+id/lv_Consulta"
+        android:layout_width="321dp"
+        android:layout_height="379dp"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="117dp"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

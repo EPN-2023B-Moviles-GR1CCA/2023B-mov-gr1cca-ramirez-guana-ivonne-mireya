@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2CFF9800"
+    tools:context=".actualizar_Consulta">
+
+    <TextView
+        android:id="@+id/textIngreso"
+        android:layout_width="412dp"
+        android:layout_height="86dp"
+        android:background="#83FF9800"
+        android:padding="18dp"
+        android:text="Actualizar datos Consulta"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <EditText
+        android:id="@+id/et_nombreUPDConsulta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:hint="Nombre"
+        android:inputType="text"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/idConsulta"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/idConsulta"
+        app:layout_constraintTop_toBottomOf="@+id/idConsulta" />
+
+    <EditText
+        android:id="@+id/et_tpesoUPDConsulta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="Peso"
+        android:inputType="text"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/et_motivoUDPConsulta"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/et_motivoUDPConsulta"
+        app:layout_constraintTop_toBottomOf="@+id/et_motivoUDPConsulta" />
+
+    <EditText
+        android:id="@+id/et_idMascotaUPD_Consulta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="id Mascota"
+        android:inputType="text"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/et_EsPresencialUPDConsulta"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/et_EsPresencialUPDConsulta"
+        app:layout_constraintTop_toBottomOf="@+id/et_EsPresencialUPDConsulta" />
+
+    <Button
+        android:id="@+id/btn_actualizarConsulta"
+        android:layout_width="205dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="96dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="Actualizar Consulta"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/et_idMascotaUPD_Consulta"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/et_idMascotaUPD_Consulta" />
+
+    <EditText
+        android:id="@+id/et_EsPresencialUPDConsulta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="Es Presencial"
+        android:inputType="text"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/et_tpesoUPDConsulta"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/et_tpesoUPDConsulta"
+        app:layout_constraintTop_toBottomOf="@+id/et_tpesoUPDConsulta" />
+
+    <ImageView
+
+        android:id="@+id/imageView"
+        android:layout_width="141dp"
+        android:layout_height="141dp"
+        android:background="@drawable/registro"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2">
+
+    </ImageView>
+
+    <EditText
+        android:id="@+id/idConsulta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="id Consulta"
+        android:inputType="text"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textIngreso"
+        app:layout_constraintVertical_bias="0.053" />
+
+    <EditText
+        android:id="@+id/et_motivoUDPConsulta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Motivo"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/et_nombreUPDConsulta"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/et_nombreUPDConsulta"
+        app:layout_constraintTop_toBottomOf="@+id/et_nombreUPDConsulta" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

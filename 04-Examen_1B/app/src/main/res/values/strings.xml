@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">Examen_1B</string>
-    <string name="title_activity_mascota_creada">mascota_Creada</string>
-    <string-array name="items_si_no">
-        <item>Si</item>
-        <item>No</item>
-    </string-array>
-</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:background="#2CFF9800"
+        android:id="@+id/mi_editarmascota"
+        android:title="Editar" />
+
+    <item
+        android:background="#2CFF9800"
+        android:id="@+id/mi_eliminarmascota"
+        android:title="Eliminar" />
+    <item
+        android:background="#2CFF9800"
+        android:id="@+id/mi_verconsultas"
+        android:title="Ver Consultas" />
+</menu>

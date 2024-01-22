@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2CFF9800"
+    tools:context=".actualizar_Mascota">
+
+
+    <ImageView
+
+        android:id="@+id/imageView"
+        android:layout_width="141dp"
+        android:layout_height="141dp"
+        android:background="@drawable/registro"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/textIngreso"
+        android:layout_width="412dp"
+        android:layout_height="86dp"
+        android:background="#83FF9800"
+        android:padding="18dp"
+        android:text="Actualizar datos Mascota "
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <EditText
+        android:id="@+id/tv_updidMascota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="id Mascota"
+        android:inputType="number"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.238"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textIngreso"
+        app:layout_constraintVertical_bias="0.098" />
+
+    <EditText
+        android:id="@+id/tv_updNombreMascota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:hint="Nombre"
+        android:inputType="text"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/tv_updidMascota"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_updidMascota"
+        app:layout_constraintTop_toBottomOf="@+id/tv_updidMascota" />
+
+    <EditText
+        android:id="@+id/tv_updFechaNMascota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:ems="10"
+        android:hint="Fecha Nacimiento"
+        android:inputType="text"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/tv_updNombreMascota"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_updNombreMascota"
+        app:layout_constraintTop_toBottomOf="@+id/tv_updNombreMascota" />
+
+    <EditText
+        android:id="@+id/tv_updfecuenciaCardiacaMascota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:ems="10"
+        android:hint="Frecuencia Cardiaca"
+        android:inputType="text"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/tv_updFechaNMascota"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_updFechaNMascota"
+        app:layout_constraintTop_toBottomOf="@+id/tv_updFechaNMascota" />
+
+    <EditText
+        android:id="@+id/tv_updespecieMascota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:ems="10"
+        android:hint="Especie"
+        android:inputType="text"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/tv_updfecuenciaCardiacaMascota"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_updfecuenciaCardiacaMascota"
+        app:layout_constraintTop_toBottomOf="@+id/tv_updfecuenciaCardiacaMascota" />
+
+    <Button
+        android:id="@+id/btn_updMascota"
+        android:layout_width="209dp"
+        android:layout_height="50dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="Actualizar Mascota"
+        android:textColor="#171714"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tv_updespecieMascota"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_updespecieMascota"
+        app:layout_constraintTop_toBottomOf="@+id/tv_updespecieMascota"
+        app:layout_constraintVertical_bias="0.357" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
