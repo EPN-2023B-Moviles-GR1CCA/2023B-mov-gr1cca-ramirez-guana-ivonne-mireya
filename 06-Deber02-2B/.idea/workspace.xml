@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c39b9e5f-95b7-4f5b-a212-0bfa7829e7f1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="1db1f60e-4148-4cdb-824b-2482f50322bd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../04-Examen_1B/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../04-Examen_1B/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +18,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="2bGrD9wCUAfWONAMArWN7t28NSI" />
+  <component name="ProjectId" id="2bbTPiWFPr05AoT39PqTIaiTvg5" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -30,18 +30,17 @@
     "RunOnceActivity.cidr.known.project.marker": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/LENOVO/Desktop/A.Moviles.R/2023B-mov-gr1cca-ramirez-guana-ivonne-mireya/04-Examen_1B"
+    "last_opened_file_path": "C:/Users/LENOVO/Desktop/A.Moviles.R/2023B-mov-gr1cca-ramirez-guana-ivonne-mireya/06-Deber02-2B"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c39b9e5f-95b7-4f5b-a212-0bfa7829e7f1" name="Changes" comment="" />
-      <created>1705852134464</created>
+      <changelist id="1db1f60e-4148-4cdb-824b-2482f50322bd" name="Changes" comment="" />
+      <created>1706482757290</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1705852134464</updated>
+      <updated>1706482757290</updated>
     </task>
     <servers />
   </component>
