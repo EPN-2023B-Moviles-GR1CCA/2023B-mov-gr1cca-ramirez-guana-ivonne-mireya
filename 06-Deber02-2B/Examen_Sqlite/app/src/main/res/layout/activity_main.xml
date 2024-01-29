@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/constraint_mascotas"
+    android:background="#3B673AB7"
+    tools:context=".MainActivity">
+
+    <ImageView
+
+        android:id="@+id/imageView2"
+        android:layout_width="221dp"
+        android:layout_height="158dp"
+        android:background="@drawable/mascotas"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.152"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.972">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/tv_Consultas"
+        android:layout_width="412dp"
+        android:layout_height="86dp"
+        android:background="#673AB7"
+        android:padding="18dp"
+        android:text="Bienvenido a Mascotas"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ListView
+        android:id="@+id/lv_list_mascotas"
+        android:layout_width="290dp"
+        android:layout_height="356dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginBottom="212dp"
+        android:foregroundTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Consultas"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/btnCrearMascota"
+        android:layout_width="99dp"
+        android:layout_height="57dp"
+        android:text="Crear"
+        android:textColorLink="@android:color/holo_orange_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.875"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lv_list_mascotas"
+        app:layout_constraintVertical_bias="0.619" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

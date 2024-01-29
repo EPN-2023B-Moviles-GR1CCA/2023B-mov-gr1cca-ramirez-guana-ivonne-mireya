@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_crear_mascota"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3B673AB7"
+    tools:context=".crear_Mascota">
+
+
+    <EditText
+        android:id="@+id/txt_nombre"
+        android:layout_width="220dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="11dp"
+        android:ems="10"
+        android:hint="Nombre/Apodo"
+        android:inputType="text"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_idMascota"
+        app:layout_constraintVertical_bias="0.016" />
+
+    <EditText
+        android:id="@+id/txt_fecha"
+        android:layout_width="220dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="13dp"
+        android:ems="10"
+        android:hint="F.Nacimiento (yyyy-MM-dd)"
+        android:inputType="text"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_nombre" />
+
+    <EditText
+        android:id="@+id/txt_frecuenciaCardiaca"
+        android:layout_width="220dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="11dp"
+        android:ems="10"
+        android:hint="Frecuencia Cardiaca"
+        android:inputType="numberDecimal"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_nivelAdiestramiento" />
+
+    <EditText
+        android:id="@+id/txt_especie"
+        android:layout_width="220dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="13dp"
+        android:ems="10"
+        android:hint="Especie"
+        android:inputType="text"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_fecha" />
+
+    <EditText
+        android:id="@+id/txt_idMascota"
+        android:layout_width="220dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="13dp"
+        android:ems="10"
+        android:hint="Id Mascota"
+        android:inputType="text"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Consultas" />
+
+    <EditText
+        android:id="@+id/txt_nivelAdiestramiento"
+        android:layout_width="220dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="14dp"
+        android:ems="10"
+        android:hint="Nivel Adiestramiento (0-5)"
+        android:inputType="number"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_especie" />
+
+    <Spinner
+        android:id="@+id/sp_esta_Esterilizado"
+        android:layout_width="220dp"
+        android:layout_height="43dp"
+        android:foregroundTint="#FFFFFF"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/btn_guardar_mascota"
+        android:layout_width="174dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="68dp"
+        android:text="Guardar"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/sp_esta_Esterilizado"
+        app:layout_constraintVertical_bias="0.247" />
+
+    <ImageView
+
+        android:id="@+id/imageView2"
+        android:layout_width="201dp"
+        android:layout_height="132dp"
+        android:background="@drawable/mascotas"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.945">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/tv_Consultas"
+        android:layout_width="412dp"
+        android:layout_height="86dp"
+        android:background="#673AB7"
+        android:padding="18dp"
+        android:text="Crear Mascotas"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Esta Esterilizado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.306"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_frecuenciaCardiaca" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
