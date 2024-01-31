@@ -1,20 +1,21 @@
-package com.example.examen_sqlite.Repositorio
+package com.example.examen_sqlite.repositorio
 
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import com.example.examen_sqlite.Model.Consulta
-import com.example.examen_sqlite.Model.Mascota
+import com.example.examen_sqlite.model.Consulta
+import com.example.examen_sqlite.model.Mascota
 
-class MascotasRepo (
+class MascotasRepo(
     contexto: Context?, //This
 ): SQLiteOpenHelper(
     contexto,
     "mascota_consulta", //nombre BDD
     null,
-    2
+    1
 ) {
+
     override fun onCreate(db: SQLiteDatabase?) {
         val scriptSQLCrearTablaMascota =
             """
@@ -51,11 +52,10 @@ class MascotasRepo (
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-        if (oldVersion < 5) {
-
+        if (oldVersion < 1) {
+            // Elimina las tablas si existen
             db?.execSQL("DROP TABLE IF EXISTS CONSULTA")
             db?.execSQL("DROP TABLE IF EXISTS MASCOTA")
-
 
             val scriptSQLCrearTablaMascota =
                 """
@@ -68,14 +68,13 @@ class MascotasRepo (
                 frecuenciaCardiaca DOUBLE,
                 estaEsterilizado INTEGER
                 )
-                """.trimIndent()
+            """.trimIndent()
             db?.execSQL(scriptSQLCrearTablaMascota)
-
 
             val scriptSQLCrearTablaConsultas =
                 """
-                CREATE TABLE CONSULTA(
-               id VARCHAR(50) PRIMARY KEY ON CONFLICT ABORT,
+            CREATE TABLE CONSULTA(
+                id VARCHAR(50) PRIMARY KEY ON CONFLICT ABORT,
                 nHistorial INTEGER,
                 fechaConsulta TEXT,
                 esPresencial INTEGER,
@@ -87,8 +86,8 @@ class MascotasRepo (
                     FOREIGN KEY (idMascota)
                     REFERENCES MASCOTA(idMascota)
                     ON DELETE CASCADE
-                )
-                """.trimIndent()
+            )
+            """.trimIndent()
             db?.execSQL(scriptSQLCrearTablaConsultas)
         }
     }
@@ -160,7 +159,7 @@ class MascotasRepo (
         return mascotas //arreglo
     }
 
-    fun consultarMascotaPorCodigoUnico(idMascota: String): Mascota{
+    fun consultarMascotaPorIdMascota(idMascota: String): Mascota{
         val baseDatosLectura = readableDatabase
 
         val scriptConsultaLectura = """
@@ -169,23 +168,23 @@ class MascotasRepo (
 
         val parametrosConsultaLectura = arrayOf(idMascota)
 
-        val resultadoConsultaLectura = baseDatosLectura.rawQuery(
+        val resultadoConsulta = baseDatosLectura.rawQuery(
             scriptConsultaLectura, //Consulta
             parametrosConsultaLectura //Parametros
         )
 
-        val existeUsuario = resultadoConsultaLectura.moveToFirst()
+        val existeMascota = resultadoConsulta.moveToFirst()
 
         val usuarioEncontrado = Mascota("", "", "", 0, "", 0.0, false)
-        if(existeUsuario){
+        if(existeMascota){
             do{
-                val idMascota = resultadoConsultaLectura.getString(0) //Indice 0
-                val nombre = resultadoConsultaLectura.getString(1)
-                val especie = resultadoConsultaLectura.getString(2)
-                val nivelAdiestramiento = resultadoConsultaLectura.getInt(3)
-                val fechaNacimiento = resultadoConsultaLectura.getString(4)
-                val frecuenciaCardiaca = resultadoConsultaLectura.getDouble(5)
-                val estaEsterilizado = resultadoConsultaLectura.getString(6)
+                val idMascota = resultadoConsulta.getString(0) //Indice 0
+                val nombre = resultadoConsulta.getString(1)
+                val especie = resultadoConsulta.getString(2)
+                val nivelAdiestramiento = resultadoConsulta.getInt(3)
+                val fechaNacimiento = resultadoConsulta.getString(4)
+                val frecuenciaCardiaca = resultadoConsulta.getDouble(5)
+                val estaEsterilizado = resultadoConsulta.getString(6)
 
                 if(idMascota != null){
                     usuarioEncontrado.idMascota = idMascota
@@ -196,15 +195,14 @@ class MascotasRepo (
                     usuarioEncontrado.frecuenciaCardiaca = frecuenciaCardiaca
                     usuarioEncontrado.estaEsterilizado = estaEsterilizado.equals("1")
                 }
-            } while (resultadoConsultaLectura.moveToNext())
+            } while (resultadoConsulta.moveToNext())
         }
-
-        resultadoConsultaLectura.close()
+        resultadoConsulta.close()
         baseDatosLectura.close()
         return usuarioEncontrado //arreglo
     }
 
-    fun actualizarMascotaPorCodigoUnico(
+    fun actualizarMascota(
         datosActualizados: Mascota
     ): Boolean{
         val conexionEscritura = writableDatabase
@@ -228,10 +226,10 @@ class MascotasRepo (
         return if (resultadoActualizcion == -1) false else true
     }
 
-    fun eliminarMascotaPorCodigoUnico(idMascota: String): Boolean{
+    fun eliminarMascotaPorIdMascota(idMascota: String): Boolean{
         val conexionEscritura = writableDatabase
 
-        val parametrosConsultaDelete = arrayOf( idMascota)
+        val parametrosConsultaDelete = arrayOf(idMascota)
 
         val resultadoEliminacion = conexionEscritura
             .delete(
@@ -244,20 +242,18 @@ class MascotasRepo (
         return if(resultadoEliminacion == -1) false else true
     }
 
-    /* CRUD Consultass */
-
     fun crearConsultas(newConsulta: Consulta): Boolean{
         val basedatosEscritura = writableDatabase
         val valoresAGuardar = ContentValues()
 
         valoresAGuardar.put("id", newConsulta.id)
-        valoresAGuardar.put("recomendacion", newConsulta.recomendacion)
+        valoresAGuardar.put("nHistorial", newConsulta.nHistorial)
         valoresAGuardar.put("fechaConsulta", newConsulta.fechaConsulta)
         valoresAGuardar.put("esPresencial", if(newConsulta.esPresencial) 1 else 0)
         valoresAGuardar.put("motivo", newConsulta.motivo)
-        valoresAGuardar.put("nHistorial", newConsulta.nHistorial)
         valoresAGuardar.put("peso", newConsulta.peso )
-        valoresAGuardar.put("idMascota", newConsulta.idMascotaC)
+        valoresAGuardar.put("recomendacion", newConsulta.recomendacion)
+        valoresAGuardar.put("idMascota", newConsulta.idMascota)
 
         val resultadoGuardar = basedatosEscritura
             .insert(
@@ -270,7 +266,7 @@ class MascotasRepo (
         return if (resultadoGuardar.toInt() == -1) false else true
     }
 
-    fun obtenerConsultassPorMascota(idMascota: String): ArrayList<Consulta> {
+    fun obtenerConsultasPorMascota(idMascota: String): ArrayList<Consulta> {
         val consultas = arrayListOf<Consulta>()
         val baseDatosLectura = readableDatabase
 
@@ -289,16 +285,16 @@ class MascotasRepo (
 
             do{
                 val id = resultadoConsultaLectura.getString(0)
-                val recomendacion = resultadoConsultaLectura.getString(1)
+                val nHistorial = resultadoConsultaLectura.getInt(1)
                 val fechaConsulta = resultadoConsultaLectura.getString(2)
                 val esPresencial = resultadoConsultaLectura.getString(3)
                 val motivo = resultadoConsultaLectura.getString(4)
-                val nHistorial = resultadoConsultaLectura.getInt(5)
-                val peso = resultadoConsultaLectura.getDouble(6)
+                val peso = resultadoConsultaLectura.getDouble(5)
+                val recomendacion = resultadoConsultaLectura.getString(6)
                 val idMascotaC = resultadoConsultaLectura.getString(7)
 
                 if(id != null){
-                    val consultaEncontrada = Consulta("", 1, "", true, "", 1.0, "", "")
+                    val consultaEncontrada = Consulta("", 0, "", true, "", 1.0, "", "")
                     consultaEncontrada.id = id
                     consultaEncontrada.recomendacion = recomendacion
                     consultaEncontrada.fechaConsulta = fechaConsulta
@@ -306,7 +302,7 @@ class MascotasRepo (
                     consultaEncontrada.motivo = motivo
                     consultaEncontrada.nHistorial = nHistorial
                     consultaEncontrada.peso = peso
-                    consultaEncontrada.idMascotaC = idMascotaC
+                    consultaEncontrada.idMascota = idMascotaC
 
                     consultas.add(consultaEncontrada)
                 }
@@ -319,14 +315,14 @@ class MascotasRepo (
         return consultas //arreglo
     }
 
-    fun consultarConsultasPoridYMascota(id: String, idMascotaC: String): Consulta{
+    fun consultarConsultasPoridYMascota(idConsulta: String, idMascota: String): Consulta{
         val baseDatosLectura = readableDatabase
 
         val scriptConsultaLectura = """
             SELECT * FROM CONSULTA WHERE ID = ? AND IDMASCOTA = ?
         """.trimIndent()
 
-        val parametrosConsultaLectura = arrayOf(id, idMascotaC)
+        val parametrosConsultaLectura = arrayOf(idConsulta, idMascota)
 
         val resultadoConsultaLectura = baseDatosLectura.rawQuery(
             scriptConsultaLectura, //Consulta
@@ -339,12 +335,12 @@ class MascotasRepo (
         if(existeConsultas){
             do{
                 val id = resultadoConsultaLectura.getString(0)
-                val recomendacion = resultadoConsultaLectura.getString(1)
+                val nHistorial = resultadoConsultaLectura.getInt(1)
                 val fechaConsulta = resultadoConsultaLectura.getString(2)
                 val esPresencial = resultadoConsultaLectura.getString(3)
                 val motivo = resultadoConsultaLectura.getString(4)
-                val nHistorial = resultadoConsultaLectura.getInt(5)
-                val peso = resultadoConsultaLectura.getDouble(6)
+                val peso = resultadoConsultaLectura.getDouble(5)
+                val recomendacion = resultadoConsultaLectura.getString(6)
                 val idMascotaC = resultadoConsultaLectura.getString(7)
 
                 if(id != null){
@@ -355,7 +351,7 @@ class MascotasRepo (
                     consultaEncontrada.motivo = motivo
                     consultaEncontrada.nHistorial = nHistorial
                     consultaEncontrada.peso = peso
-                    consultaEncontrada.idMascotaC = idMascotaC
+                    consultaEncontrada.idMascota = idMascotaC
                 }
             } while (resultadoConsultaLectura.moveToNext())
         }
@@ -365,7 +361,7 @@ class MascotasRepo (
         return consultaEncontrada //arreglo
     }
 
-    fun actualizarConsultasPoridYCodigoMascota(
+    fun actualizarConsultasPoridYIdMascota(
         datosActualizados: Consulta
     ): Boolean{
         val conexionEscritura = writableDatabase
@@ -377,7 +373,7 @@ class MascotasRepo (
         valoresAActualizar.put("nHistorial", datosActualizados.nHistorial)
         valoresAActualizar.put("peso", datosActualizados.peso)
         //where id = ?
-        val parametrosConsultaActualizar = arrayOf(datosActualizados.id, datosActualizados.idMascotaC)
+        val parametrosConsultaActualizar = arrayOf(datosActualizados.id, datosActualizados.idMascota)
         val resultadoActualizcion = conexionEscritura
             .update(
                 "CONSULTA", //tabla
@@ -389,10 +385,10 @@ class MascotasRepo (
         return if (resultadoActualizcion == -1) false else true
     }
 
-    fun eliminarConsultasPoridYCodigoMascota(codigoConsultas: String, idMascota: String): Boolean{
+    fun eliminarConsultasPoridYIdMascota(idConsulta: String, idMascota: String): Boolean{
         val conexionEscritura = writableDatabase
 
-        val parametrosConsultaDelete = arrayOf( codigoConsultas, idMascota)
+        val parametrosConsultaDelete = arrayOf( idConsulta, idMascota)
 
         val resultadoEliminacion = conexionEscritura
             .delete(
@@ -404,5 +400,4 @@ class MascotasRepo (
         conexionEscritura.close()
         return if(resultadoEliminacion == -1) false else true
     }
-
 }

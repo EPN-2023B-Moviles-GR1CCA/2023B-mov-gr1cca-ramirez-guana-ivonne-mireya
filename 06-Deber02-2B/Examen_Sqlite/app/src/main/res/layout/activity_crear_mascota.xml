@@ -2,44 +2,44 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/layout_crear_mascota"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/layout_crear_mascota"
     android:background="#3B673AB7"
     tools:context=".crear_Mascota">
 
-
     <EditText
-        android:id="@+id/txt_nombre"
+        android:id="@+id/txt_nombre_crear"
         android:layout_width="220dp"
         android:layout_height="43dp"
-        android:layout_marginTop="11dp"
+        android:layout_marginBottom="320dp"
         android:ems="10"
         android:hint="Nombre/Apodo"
         android:inputType="text"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_idMascota"
-        app:layout_constraintVertical_bias="0.016" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_idMascota_crear"
+        app:layout_constraintVertical_bias="0.057" />
 
     <EditText
-        android:id="@+id/txt_fecha"
+        android:id="@+id/txt_fecha_crear"
         android:layout_width="220dp"
         android:layout_height="43dp"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="F.Nacimiento (yyyy-MM-dd)"
         android:inputType="text"
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_nombre" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_nombre_crear" />
 
     <EditText
-        android:id="@+id/txt_frecuenciaCardiaca"
+        android:id="@+id/txt_frecuenciaCardiaca_crear"
         android:layout_width="220dp"
         android:layout_height="43dp"
         android:layout_marginTop="11dp"
@@ -49,10 +49,10 @@
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_nivelAdiestramiento" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_nivelAdiestramiento_crear" />
 
     <EditText
-        android:id="@+id/txt_especie"
+        android:id="@+id/txt_especie_crear"
         android:layout_width="220dp"
         android:layout_height="43dp"
         android:layout_marginTop="13dp"
@@ -62,10 +62,10 @@
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_fecha" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_fecha_crear" />
 
     <EditText
-        android:id="@+id/txt_idMascota"
+        android:id="@+id/txt_idMascota_crear"
         android:layout_width="220dp"
         android:layout_height="43dp"
         android:layout_marginTop="13dp"
@@ -75,10 +75,10 @@
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_Consultas" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_Consultas_crear" />
 
     <EditText
-        android:id="@+id/txt_nivelAdiestramiento"
+        android:id="@+id/txt_nivelAdiestramiento_crear"
         android:layout_width="220dp"
         android:layout_height="43dp"
         android:layout_marginTop="14dp"
@@ -88,10 +88,10 @@
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_especie" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_especie_crear" />
 
     <Spinner
-        android:id="@+id/sp_esta_Esterilizado"
+        android:id="@+id/sp_esta_Esterilizado_crear"
         android:layout_width="220dp"
         android:layout_height="43dp"
         android:foregroundTint="#FFFFFF"
@@ -101,7 +101,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
-        android:id="@+id/btn_guardar_mascota"
+        android:id="@+id/btn_guardar_mascota_crear"
         android:layout_width="174dp"
         android:layout_height="52dp"
         android:layout_marginTop="68dp"
@@ -111,7 +111,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/sp_esta_Esterilizado"
+        app:layout_constraintTop_toBottomOf="@+id/sp_esta_Esterilizado_crear"
         app:layout_constraintVertical_bias="0.247" />
 
     <ImageView
@@ -130,7 +130,7 @@
     </ImageView>
 
     <TextView
-        android:id="@+id/tv_Consultas"
+        android:id="@+id/tv_Consultas_crear"
         android:layout_width="412dp"
         android:layout_height="86dp"
         android:background="#673AB7"
@@ -156,7 +156,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.306"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_frecuenciaCardiaca" />
-
+        app:layout_constraintTop_toBottomOf="@+id/txt_frecuenciaCardiaca_crear" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,5 @@
 package com.example.examen_sqlite
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,22 +9,21 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
-import com.example.examen_sqlite.BDD.BDD
-import com.example.examen_sqlite.Model.Consulta
+import com.example.examen_sqlite.bdd.BDD
+import com.example.examen_sqlite.model.Consulta
 import com.google.android.material.snackbar.Snackbar
 
 class actualizar_Consulta : AppCompatActivity() {
-    //preguntar
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_actualizar_consulta)
-        val idMascotaC = intent.extras?.getString("codigoMascota")
-        val idConsultas = intent.extras?.getString("id")
-        val recomendacion_consulta = intent.extras?.getString("recomendacionConsultas")
+
+        val idMascotaC = intent.extras?.getString("idMascota")
+        val idConsulta = intent.extras?.getString("id")
+        val numHistorial = intent.extras?.getString("numHistorial")
 
 
-        val spinnerEsPresencial = findViewById<Spinner>(R.id.sp_esPresencial)
+        val spinnerEsPresencial = findViewById<Spinner>(R.id.sp_esPresencial_editar)
 
         val adaptador = ArrayAdapter.createFromResource(
             this, // contexto,
@@ -35,27 +33,27 @@ class actualizar_Consulta : AppCompatActivity() {
         adaptador.setDropDownViewResource(android.R.layout.simple_spinner_item)
         spinnerEsPresencial.adapter = adaptador
 
+        findViewById<TextView>(R.id.tv_Consultas_editar).setText("Número de historial:  ${numHistorial}")
 
-        findViewById<TextView>(R.id.tv_Consultas).setText("Consultas a modificar: ${recomendacion_consulta}")
+        if (idConsulta != null && idMascotaC != null) {
 
-        if (idConsultas != null && idMascotaC != null) {
+            val consultaEdicion = BDD.bddAplicacion!!.consultarConsultasPoridYMascota(idConsulta, idMascotaC)
 
-            val consultaEdicion = BDD.bddAplicacion!!.consultarConsultasPoridYMascota(idConsultas, idMascotaC)
-
-            val id = findViewById<EditText>(R.id.et_id)
-            val recomendacion = findViewById<EditText>(R.id.et_recomendacion)
-            val fechaConsulta = findViewById<EditText>(R.id.et_fecha)
-            val nHistorial = findViewById<EditText>(R.id.et_nHistorial)
-            val peso = findViewById<EditText>(R.id.et_peso)
+            val id = findViewById<EditText>(R.id.et_id_editar)
+            val recomendacion = findViewById<EditText>(R.id.et_recomendacion_editar)
+            val fechaConsulta = findViewById<EditText>(R.id.et_fecha_editar)
+            val nHistorial = findViewById<EditText>(R.id.et_nHistorial_editar)
+            val peso = findViewById<EditText>(R.id.et_peso_editar)
+            val motivo = findViewById<EditText>(R.id.et_motivo_editar)
 
             id.setText(consultaEdicion.id)
             recomendacion.setText(consultaEdicion.recomendacion)
             fechaConsulta.setText(consultaEdicion.fechaConsulta)
             nHistorial.setText(consultaEdicion.nHistorial.toString())
             peso.setText(consultaEdicion.peso.toString())
+            motivo.setText(consultaEdicion.motivo)
 
-
-            val esPresencialArray = resources.getStringArray(R.array.items_esta_Esterilizado)
+            val esPresencialArray = resources.getStringArray(R.array.items_es_Presencial)
 
             val esPresencialPosition = if (consultaEdicion.esPresencial) {
                 esPresencialArray.indexOf("Si")
@@ -65,41 +63,30 @@ class actualizar_Consulta : AppCompatActivity() {
 
             spinnerEsPresencial.setSelection(esPresencialPosition)
 
-
-           // preguntae si borrar
-        // val motivoArray = resources.getStringArray(R.array.items_tipo_cocina)
-
-           // val motivoPosition = motivoArray.indexOf(consultaEdicion.motivo)
-            //if (motivoPosition != -1) {
-             //   spinnerTipoCocina.setSelection(motivoPosition)
-           // }
-
         }
-
-
-        val btnGuardarConsultas = findViewById<Button>(R.id.btn_crear_consulta)
-        btnGuardarConsultas
+        val btnGuardarConsulta = findViewById<Button>(R.id.btn_guardar_consulta_editar)
+        btnGuardarConsulta
             .setOnClickListener {
                 try {
-                    val id = findViewById<EditText>(R.id.et_id)
-                    val recomendacion = findViewById<EditText>(R.id.et_recomendacion)
-                    val fechaConsulta = findViewById<EditText>(R.id.et_fecha)
+                    val id = findViewById<EditText>(R.id.et_id_editar)
+                    val nHistorial = findViewById<EditText>(R.id.et_nHistorial_editar)
+                    val fechaConsulta = findViewById<EditText>(R.id.et_fecha_editar)
                     val esPresencial = spinnerEsPresencial.selectedItem.toString()
-                    val motivo = findViewById<EditText>(R.id.et_motivo)
-                    val nHistorial = findViewById<EditText>(R.id.et_nHistorial)
-                    val peso = findViewById<EditText>(R.id.et_peso)
-
+                    val motivo = findViewById<EditText>(R.id.et_motivo_editar)
+                    val peso = findViewById<EditText>(R.id.et_peso_editar)
+                    val recomendacion = findViewById<EditText>(R.id.et_recomendacion_editar)
 
                     id.error = null
                     recomendacion.error = null
                     nHistorial.error = null
                     peso.error = null
                     fechaConsulta.error = null
+                    motivo.error = null
 
-                    if(validarCampos(id,nHistorial, fechaConsulta, esPresencial,
-                            motivo.toString(),  peso,recomendacion)){
+                    if (validarCampos( id, nHistorial, fechaConsulta, esPresencial, motivo, peso, recomendacion)
+                    ) {
                         val esEsPresencial = esPresencial.equals("Si")
-                        val datosActualizados = Consulta(
+                        val editedConsulta = Consulta(
                             id.text.toString(),
                             nHistorial.text.toString().toInt(),
                             fechaConsulta.text.toString(),
@@ -110,18 +97,16 @@ class actualizar_Consulta : AppCompatActivity() {
                             idMascotaC!!
                         )
 
-                        val respuesta = BDD
-                            .bddAplicacion!!.actualizarConsultasPoridYCodigoMascota(datosActualizados)
+                        val respuesta = BDD.bddAplicacion!!.actualizarConsultasPoridYIdMascota(editedConsulta)
 
                         if (respuesta) {
-
                             val data = Intent()
-                            data.putExtra("codigoMascota", idMascotaC)
-                            data.putExtra("message", "Los datos de la consulta se han actualizado exitosamente")
+                            data.putExtra("idMascota", idMascotaC)
+                            data.putExtra("message", "La consulta se ha actualizado exitosamente")
                             setResult(RESULT_OK, data)
                             finish()
                         } else {
-                            mostrarSnackbar("Hubo un problema al actualizar los datos")
+                            mostrarSnackbar("Hubo un problema al actualizar la consulta")
                         }
                     }
 
@@ -134,14 +119,22 @@ class actualizar_Consulta : AppCompatActivity() {
     fun mostrarSnackbar(texto: String) {
         Snackbar
             .make(
-                findViewById(R.id.layout_actualizar_consulta), //view
+                findViewById(R.id.layout_crear_consulta), //view
                 texto, //texto
                 Snackbar.LENGTH_LONG //tiwmpo
             )
             .show()
     }
 
-    fun validarCampos(id: EditText, recomendacion: EditText, fecha: EditText, esPresencial: String, motivo: String, nHistorial: EditText, peso: EditText): Boolean{
+    fun validarCampos(
+        id: EditText,
+        nHistorial: EditText,
+        fecha: EditText,
+        esPresencial: String,
+        motivo: EditText,
+        peso: EditText,
+        recomendacion: EditText
+    ): Boolean {
         if (id.text.isBlank()) {
             id.error = "Campo requerido"
             return false
@@ -157,8 +150,8 @@ class actualizar_Consulta : AppCompatActivity() {
             return false
         } else {
             val nHistorialInt = nHistorial.text.toString().toInt()
-            if (nHistorialInt < 3) {
-                nHistorial.error = "La cantidad de productos debe ser un número mayor o igual a 3"
+            if (nHistorialInt < 0) {
+                nHistorial.error = "El número de historial debe ser mayor a 0"
                 return false
             }
         }
@@ -174,26 +167,27 @@ class actualizar_Consulta : AppCompatActivity() {
             }
         }
 
-        if(peso.text.isBlank()){
+        if (peso.text.isBlank()) {
             peso.error = "Campo requerido"
             return false
-        }else{
+        } else {
             val pesoDouble = peso.text.toString().toDouble()
-            if (pesoDouble <=0) {
+            if (pesoDouble <= 0) {
                 peso.error = "El peso debe ser un número mayor a 0"
                 return false
             }
         }
 
-        if(esPresencial.equals("--Seleccionar--", ignoreCase = true)){
-            mostrarSnackbar("Porfavor especifique si es el plato del día o no")
+        if (esPresencial.equals("--Seleccionar--", ignoreCase = true)) {
+            mostrarSnackbar("Porfavor especifique si es consulta presencial o no")
             return false
         }
 
-        if(motivo.equals("--Seleccionar--", ignoreCase = true)){
-            mostrarSnackbar("Porfavor especifique el tipo de cocina")
+        if (motivo.text.isBlank()) {
+            motivo.error = "Campo requerido"
             return false
         }
         return true
     }
+
 }

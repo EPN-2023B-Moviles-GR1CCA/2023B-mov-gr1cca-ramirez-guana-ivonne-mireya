@@ -1,9 +1,8 @@
 package com.example.examen_sqlite
 
 import android.app.Activity
-import android.content.Intent
 import android.content.DialogInterface
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.view.ContextMenu
 import android.view.MenuItem
@@ -13,45 +12,48 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
 import androidx.activity.result.contract.ActivityResultContracts
-import com.example.examen_sqlite.BDD.BDD
 import androidx.appcompat.app.AlertDialog
-import com.example.examen_sqlite.Model.Mascota
-import com.example.examen_sqlite.Repositorio.MascotasRepo
+import androidx.appcompat.app.AppCompatActivity
+import com.example.examen_sqlite.bdd.BDD
+import com.example.examen_sqlite.model.Mascota
+import com.example.examen_sqlite.repositorio.MascotasRepo
 import com.google.android.material.snackbar.Snackbar
 
-
 class MainActivity : AppCompatActivity() {
+
     var mascotas = arrayListOf<Mascota>()
 
-        override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-            BDD.bddAplicacion = MascotasRepo(this)
-            mascotas = BDD.bddAplicacion!!.obtenerMascotas()
-            if(mascotas.size != 0){
-                //listado de mascotas
-                val listView = findViewById<ListView>(R.id.lv_list_mascotas)
 
-                val adaptador = ArrayAdapter(
-                    this, // contexto
-                    android.R.layout.simple_list_item_1, // como se va a ver (XML)
-                    mascotas
-                )
+        BDD.bddAplicacion = MascotasRepo(this)
+        mascotas = BDD.bddAplicacion!!.obtenerMascotas()
 
-                listView.adapter = adaptador
-                adaptador.notifyDataSetChanged()
-                registerForContextMenu(listView)
-            }else{
-                mostrarSnackbar("No existen mascotas")
-            }
+        if(mascotas.size != 0){
+            //listado de mascotas
+            val listView = findViewById<ListView>(R.id.lv_list_mascotas)
 
-            val btnCrearMascota = findViewById<Button>(R.id.btnCrearMascota)
-            btnCrearMascota
-                .setOnClickListener {
-                    val intent = Intent(this, crear_Mascota::class.java)
-                    callbackContenidoIntentExplicito.launch(intent)
-                }
+            val adaptador = ArrayAdapter(
+                this, // contexto
+                android.R.layout.simple_list_item_1, // como se va a ver (XML)
+                mascotas
+            )
+
+            listView.adapter = adaptador
+            adaptador.notifyDataSetChanged()
+            registerForContextMenu(listView)
+        }else{
+            mostrarSnackbar("No existen mascotas")
         }
+
+        val btnCrearMascota = findViewById<Button>(R.id.btnCrearMascota)
+        btnCrearMascota
+            .setOnClickListener {
+                val intent = Intent(this, crear_Mascota::class.java)
+                callbackContenidoIntentExplicito.launch(intent)
+            }
+    }
 
     fun mostrarSnackbar(texto:String){
         Snackbar
@@ -81,7 +83,7 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId){
             R.id.mi_editar ->{
                 val idMascota = mascotas.get(posicionItemSeleccionado).idMascota
-                val nombre_Mascota = mascotas.get(posicionItemSeleccionado).nombre + " " + mascotas.get(posicionItemSeleccionado).especie
+                val nombre_Mascota = mascotas.get(posicionItemSeleccionado).nombre + " - " + mascotas.get(posicionItemSeleccionado).especie
 
                 val extras = Bundle()
                 extras.putString("idMascota", idMascota)
@@ -98,8 +100,8 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.mi_ver_consulta -> {
                 val idMascota = mascotas.get(posicionItemSeleccionado).idMascota
-                val nombre_Mascota = mascotas.get(posicionItemSeleccionado).nombre + " " + mascotas.get(posicionItemSeleccionado).especie
-                mostrarSnackbar(idMascota)
+                val nombre_Mascota = mascotas.get(posicionItemSeleccionado).nombre + " - " + mascotas.get(posicionItemSeleccionado).especie
+
                 val extras = Bundle()
                 extras.putString("idMascota", idMascota)
                 extras.putString("nombreMascota", nombre_Mascota)
@@ -112,7 +114,7 @@ class MainActivity : AppCompatActivity() {
 
     fun abrirDialogo(idMascota: String): Boolean {
         val builder = AlertDialog.Builder(this)
-        builder.setTitle("Desea eliminar a este mascota?")
+        builder.setTitle("Desea eliminar a esta mascota?")
 
         var eliminacionExitosa = false
 
@@ -120,14 +122,14 @@ class MainActivity : AppCompatActivity() {
             "Aceptar",
             DialogInterface.OnClickListener { dialog, which ->
 
-                val respuesta = BDD.bddAplicacion?.eliminarMascotaPorCodigoUnico(idMascota)
+                val respuesta = BDD.bddAplicacion?.eliminarMascotaPorIdMascota(idMascota)
 
                 if (respuesta == true) {
-                    mostrarSnackbar("Mascota eliminado exitosamente")
+                    mostrarSnackbar("Mascota eliminada exitosamente")
                     cargarListaMascotas()
                     eliminacionExitosa = true
                 } else {
-                    mostrarSnackbar("No se pudo eliminar al mascota")
+                    mostrarSnackbar("No se pudo eliminar la mascota")
                     eliminacionExitosa = false
                 }
             }

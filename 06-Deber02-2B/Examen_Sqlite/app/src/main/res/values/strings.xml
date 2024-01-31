@@ -1,10 +1,12 @@
 <resources>
-    <string name="app_name">Examen_Sqlite</string>
+    <string name="app_name">examen_sqlite</string>
+
     <string-array name="items_esta_Esterilizado">
         <item>--Seleccionar--</item>
         <item>Si</item>
         <item>No</item>
     </string-array>
+
     <string-array name="items_es_Presencial">
         <item>--Seleccionar--</item>
         <item>Si</item>

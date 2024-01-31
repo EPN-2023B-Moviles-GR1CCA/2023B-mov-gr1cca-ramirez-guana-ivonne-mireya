@@ -1,7 +1,6 @@
-package com.example.examen_sqlite.Model
+package com.example.examen_sqlite.model
 
-
-class Mascota(
+class Mascota (
     var idMascota: String,
     var nombre: String,
     var especie: String,
@@ -17,7 +16,7 @@ class Mascota(
 
     override fun toString(): String {
         return "\nidMascota: $idMascota " +
-                "\nNombre/Apodo Mascota $nombre $especie. " +
+                "\nNombre/Apodo Mascota $nombre - $especie. " +
                 "\nNivel Adiestramiento: $nivelAdiestramiento" +
                 "\nFecha Nacimiento: $fechaNacimiento " +
                 "\nFrecuencia Cardiaca: $frecuenciaCardiaca" +

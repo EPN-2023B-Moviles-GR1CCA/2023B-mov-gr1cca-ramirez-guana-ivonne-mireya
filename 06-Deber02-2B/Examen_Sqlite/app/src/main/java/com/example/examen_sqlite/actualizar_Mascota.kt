@@ -1,6 +1,5 @@
 package com.example.examen_sqlite
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,19 +9,15 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
-import com.example.examen_sqlite.BDD.BDD
-import com.example.examen_sqlite.Model.Mascota
+import com.example.examen_sqlite.bdd.BDD
+import com.example.examen_sqlite.model.Mascota
 import com.google.android.material.snackbar.Snackbar
 
 class actualizar_Mascota : AppCompatActivity() {
-    //preguntar
-    @SuppressLint("MissingInflatedId")
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_actualizar_mascota)
-
-        val spinnerEstaEsterilizado = findViewById<Spinner>(R.id.sp_esta_Esterilizado)
+        val spinnerEstaEsterilizado = findViewById<Spinner>(R.id.sp_esta_Esterilizado_editar)
 
         val adaptador = ArrayAdapter.createFromResource(
             this, // contexto,
@@ -32,21 +27,19 @@ class actualizar_Mascota : AppCompatActivity() {
         adaptador.setDropDownViewResource(android.R.layout.simple_spinner_item)
         spinnerEstaEsterilizado.adapter = adaptador
 
-
-        val idMascotaCEdicion = intent.extras?.getString("idMascota")
+        val idMascotaEdicion = intent.extras?.getString("idMascota")
         val nombre_mascota = intent.extras?.getString("nombreMascota")
-        findViewById<TextView>(R.id.tv_Consultas).setText(nombre_mascota)
+        findViewById<TextView>(R.id.tv_Consultas_editar).setText(nombre_mascota)
 
-        if(idMascotaCEdicion != null){
-            mostrarSnackbar(idMascotaCEdicion)
-            val mascotaEdicion = BDD.bddAplicacion!!.consultarMascotaPorCodigoUnico(idMascotaCEdicion)
-            mostrarSnackbar(mascotaEdicion.estaEsterilizado.toString())
-            val idMascota = findViewById<EditText>(R.id.txt_idMascota)
-            val nombre = findViewById<EditText>(R.id.txt_nombre)
-            val especie = findViewById<EditText>(R.id.txt_especie)
-            val nivelAdiestramiento = findViewById<EditText>(R.id.txt_nivelAdiestramiento)
-            val fechaNacimiento = findViewById<EditText>(R.id.txt_fecha)
-            val frecuenciaCardiaca = findViewById<EditText>(R.id.txt_frecuenciaCardiaca)
+        if(idMascotaEdicion != null){
+
+            val mascotaEdicion = BDD.bddAplicacion!!.consultarMascotaPorIdMascota(idMascotaEdicion)
+            val idMascota = findViewById<EditText>(R.id.txt_idMascota_editar)
+            val nombre = findViewById<EditText>(R.id.txt_nombre_editar)
+            val especie = findViewById<EditText>(R.id.txt_especie_editar)
+            val nivelAdiestramiento = findViewById<EditText>(R.id.txt_nivelAdiestramiento_editar)
+            val fechaNacimiento = findViewById<EditText>(R.id.txt_fecha_editar)
+            val frecuenciaCardiaca = findViewById<EditText>(R.id.txt_frecuenciaCardiaca_editar)
 
             idMascota.setText(mascotaEdicion.idMascota)
             nombre.setText(mascotaEdicion.nombre)
@@ -54,7 +47,6 @@ class actualizar_Mascota : AppCompatActivity() {
             nivelAdiestramiento.setText(mascotaEdicion.nivelAdiestramiento.toString())
             fechaNacimiento.setText(mascotaEdicion.fechaNacimiento)
             frecuenciaCardiaca.setText(mascotaEdicion.frecuenciaCardiaca.toString())
-
 
             val estaEsterilizadoArray = resources.getStringArray(R.array.items_esta_Esterilizado)
 
@@ -65,35 +57,29 @@ class actualizar_Mascota : AppCompatActivity() {
             }
 
             spinnerEstaEsterilizado.setSelection(estaEsterilizadoPosition)
-
         }
 
-
-        val btnGuardarMascota = findViewById<Button>(R.id.btn_guardar_mascota)
+        val btnGuardarMascota = findViewById<Button>(R.id.btn_guardar_mascota_editar)
         btnGuardarMascota
             .setOnClickListener {
                 try {
-                    val idMascota = findViewById<EditText>(R.id.txt_idMascota)
-                    val nombre = findViewById<EditText>(R.id.txt_nombre)
-                    val especie = findViewById<EditText>(R.id.txt_especie)
-                    val nivelAdiestramiento = findViewById<EditText>(R.id.txt_nivelAdiestramiento)
-                    val fechaNacimiento = findViewById<EditText>(R.id.txt_fecha)
-                    val frecuenciaCardiaca = findViewById<EditText>(R.id.txt_frecuenciaCardiaca)
+                    val idMascota = findViewById<EditText>(R.id.txt_idMascota_editar)
+                    val nombre = findViewById<EditText>(R.id.txt_nombre_editar)
+                    val especie = findViewById<EditText>(R.id.txt_especie_editar)
+                    val nivelAdiestramiento = findViewById<EditText>(R.id.txt_nivelAdiestramiento_editar)
+                    val fechaNacimiento = findViewById<EditText>(R.id.txt_fecha_editar)
+                    val frecuenciaCardiaca = findViewById<EditText>(R.id.txt_frecuenciaCardiaca_editar)
                     val estaEsterilizado = spinnerEstaEsterilizado.selectedItem.toString()
 
-
-
-                    idMascota.error = null
                     nombre.error = null
                     especie.error = null
                     nivelAdiestramiento.error = null
                     fechaNacimiento.error = null
                     frecuenciaCardiaca.error = null
 
-
-                    if(validarCampos(idMascota, nombre, especie, nivelAdiestramiento, fechaNacimiento, frecuenciaCardiaca, estaEsterilizado)){
+                    if ( validarCampos( nombre, especie, nivelAdiestramiento, fechaNacimiento, frecuenciaCardiaca, estaEsterilizado )) {
                         val esPrincipal = estaEsterilizado.equals("Si")
-                        val datosActualizados = Mascota(
+                        val editedMascota = Mascota(
                             idMascota.text.toString(),
                             nombre.text.toString(),
                             especie.text.toString(),
@@ -103,17 +89,15 @@ class actualizar_Mascota : AppCompatActivity() {
                             esPrincipal
                         )
 
-                        val respuesta = BDD
-                            .bddAplicacion!!.actualizarMascotaPorCodigoUnico(datosActualizados)
+                        val respuesta = BDD.bddAplicacion!!.actualizarMascota(editedMascota)
 
-                        if(respuesta) {
-
+                        if (respuesta) {
                             val data = Intent()
-                            data.putExtra("message", "Los datos del mascota se han actualizado exitosamente")
+                            data.putExtra("message", "La mascota se ha actualizado exitosamente")
                             setResult(RESULT_OK, data)
                             finish()
-                        }else{
-                            mostrarSnackbar("Hubo un problema al actualizar los datos")
+                        } else {
+                            mostrarSnackbar("Hubo un problema en la actualizacion de la mascota")
                         }
                     }
 
@@ -123,28 +107,31 @@ class actualizar_Mascota : AppCompatActivity() {
             }
     }
 
-    fun mostrarSnackbar(texto:String){
+    fun mostrarSnackbar(texto: String) {
         Snackbar
             .make(
-                findViewById(R.id.layout_actualizar_mascota), //view
-                texto, //texto
-                Snackbar.LENGTH_LONG //tiwmpo
+                findViewById(R.id.layout_actualizar_mascota),
+                texto,
+                Snackbar.LENGTH_LONG
             )
             .show()
     }
 
-    fun validarCampos(idMascota: EditText, nombre: EditText, especie: EditText, nivelAdiestramiento: EditText, fecha: EditText, frecuenciaCardiaca: EditText, estaEsterilizado: String): Boolean{
-        if (idMascota.text.isBlank()) {
-            idMascota.error = "Campo requerido"
-            return false
-        }
+    fun validarCampos(
+        nombre: EditText,
+        especie: EditText,
+        nivelAdiestramiento: EditText,
+        fecha: EditText,
+        frecuenciaCardiaca: EditText,
+        estaEsterilizado: String
+    ): Boolean {
 
         if (nombre.text.isBlank()) {
             nombre.error = "Campo requerido"
             return false
         }
 
-        if(especie.text.isBlank()){
+        if (especie.text.isBlank()) {
             especie.error = "Campo requerido"
             return false
         }
@@ -171,18 +158,18 @@ class actualizar_Mascota : AppCompatActivity() {
             }
         }
 
-        if(frecuenciaCardiaca.text.isBlank()){
+        if (frecuenciaCardiaca.text.isBlank()) {
             frecuenciaCardiaca.error = "Campo requerido"
             return false
-        }else{
+        } else {
             val frecuenciaCardiacaDouble = frecuenciaCardiaca.text.toString().toDouble()
-            if (frecuenciaCardiacaDouble <=0) {
+            if (frecuenciaCardiacaDouble <= 0) {
                 frecuenciaCardiaca.error = "El frecuenciaCardiaca debe ser un número mayor a 0"
                 return false
             }
         }
 
-        if(estaEsterilizado.equals("--Seleccionar--", ignoreCase = true)){
+        if (estaEsterilizado.equals("--Seleccionar--", ignoreCase = true)) {
             mostrarSnackbar("Porfavor especifique si el mascota es principal o no")
             return false
         }

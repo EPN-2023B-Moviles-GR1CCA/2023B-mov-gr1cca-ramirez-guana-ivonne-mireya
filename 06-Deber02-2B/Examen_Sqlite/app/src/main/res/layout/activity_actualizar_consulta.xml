@@ -8,14 +8,13 @@
     android:id="@+id/layout_actualizar_consulta"
     tools:context=".actualizar_Consulta">
 
-
-
     <EditText
-        android:id="@+id/et_id"
+        android:id="@+id/et_id_editar"
         android:layout_width="220dp"
         android:layout_height="43dp"
         android:layout_marginBottom="584dp"
         android:ems="10"
+        android:enabled="false"
         android:hint="Id-Consulta"
         android:inputType="text"
         android:textSize="14sp"
@@ -25,35 +24,35 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/et_nHistorial"
+        android:id="@+id/et_nHistorial_editar"
         android:layout_width="220dp"
         android:layout_height="43dp"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="N° Historial"
-        android:inputType="text"
+        android:inputType="number"
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_id" />
+        app:layout_constraintTop_toBottomOf="@+id/et_id_editar" />
 
     <EditText
-        android:id="@+id/et_fecha"
+        android:id="@+id/et_fecha_editar"
         android:layout_width="220dp"
         android:layout_height="43dp"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="F.Consulta(yyyy-MM-dd)"
-        android:inputType="numberDecimal"
+        android:inputType="text"
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_nHistorial" />
+        app:layout_constraintTop_toBottomOf="@+id/et_nHistorial_editar" />
 
     <EditText
-        android:id="@+id/et_motivo"
+        android:id="@+id/et_motivo_editar"
         android:layout_width="220dp"
         android:layout_height="43dp"
         android:layout_marginTop="16dp"
@@ -64,38 +63,38 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sp_esPresencial" />
+        app:layout_constraintTop_toBottomOf="@+id/sp_esPresencial_editar" />
 
     <EditText
-        android:id="@+id/et_peso"
+        android:id="@+id/et_peso_editar"
         android:layout_width="220dp"
         android:layout_height="43dp"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Peso"
-        android:inputType="text"
+        android:inputType="number|numberDecimal"
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_motivo" />
+        app:layout_constraintTop_toBottomOf="@+id/et_motivo_editar" />
 
     <EditText
-        android:id="@+id/et_recomendacion"
+        android:id="@+id/et_recomendacion_editar"
         android:layout_width="220dp"
         android:layout_height="43dp"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Recomendación"
-        android:inputType="number"
+        android:inputType="text"
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_peso" />
+        app:layout_constraintTop_toBottomOf="@+id/et_peso_editar" />
 
     <Spinner
-        android:id="@+id/sp_esPresencial"
+        android:id="@+id/sp_esPresencial_editar"
         android:layout_width="220dp"
         android:layout_height="43dp"
         android:layout_marginTop="16dp"
@@ -107,7 +106,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
-        android:id="@+id/btn_crear_consulta"
+        android:id="@+id/btn_guardar_consulta_editar"
         android:layout_width="220dp"
         android:layout_height="43dp"
         android:text="Guardar"
@@ -116,7 +115,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/et_recomendacion" />
+        app:layout_constraintTop_toBottomOf="@+id/et_recomendacion_editar" />
 
     <ImageView
 
@@ -134,7 +133,7 @@
     </ImageView>
 
     <TextView
-        android:id="@+id/tv_Consultas"
+        android:id="@+id/tv_Consultas_editar"
         android:layout_width="412dp"
         android:layout_height="86dp"
         android:background="#673AB7"
@@ -160,6 +159,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.293"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_fecha" />
+        app:layout_constraintTop_toBottomOf="@+id/et_fecha_editar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

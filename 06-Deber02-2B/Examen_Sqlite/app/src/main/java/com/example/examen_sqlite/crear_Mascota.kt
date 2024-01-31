@@ -1,6 +1,5 @@
 package com.example.examen_sqlite
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,15 +8,16 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
-import com.example.examen_sqlite.BDD.BDD
-import com.example.examen_sqlite.Model.Mascota
+import com.example.examen_sqlite.bdd.BDD
+import com.example.examen_sqlite.model.Mascota
 import com.google.android.material.snackbar.Snackbar
 
 class crear_Mascota : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_crear_mascota)
-        val spinnerEstaEsterilizado = findViewById<Spinner>(R.id.sp_esta_Esterilizado)
+
+        val spinnerEstaEsterilizado = findViewById<Spinner>(R.id.sp_esta_Esterilizado_crear)
 
         val adaptador = ArrayAdapter.createFromResource(
             this, // contexto,
@@ -27,19 +27,17 @@ class crear_Mascota : AppCompatActivity() {
         adaptador.setDropDownViewResource(android.R.layout.simple_spinner_item)
         spinnerEstaEsterilizado.adapter = adaptador
 
-
-        val btnGuardarMascota = findViewById<Button>(R.id.btn_guardar_mascota)
+        val btnGuardarMascota = findViewById<Button>(R.id.btn_guardar_mascota_crear)
         btnGuardarMascota
             .setOnClickListener {
                 try {
-                    val idMascota = findViewById<EditText>(R.id.txt_idMascota)
-                    val nombre = findViewById<EditText>(R.id.txt_nombre)
-                    val especie = findViewById<EditText>(R.id.txt_especie)
-                    val nivelAdiestramiento = findViewById<EditText>(R.id.txt_nivelAdiestramiento)
-                    val fechaNacimiento = findViewById<EditText>(R.id.txt_fecha)
-                    val frecuenciaCardiaca = findViewById<EditText>(R.id.txt_frecuenciaCardiaca)
+                    val idMascota = findViewById<EditText>(R.id.txt_idMascota_crear)
+                    val nombre = findViewById<EditText>(R.id.txt_nombre_crear)
+                    val especie = findViewById<EditText>(R.id.txt_especie_crear)
+                    val nivelAdiestramiento = findViewById<EditText>(R.id.txt_nivelAdiestramiento_crear)
+                    val fechaNacimiento = findViewById<EditText>(R.id.txt_fecha_crear)
+                    val frecuenciaCardiaca = findViewById<EditText>(R.id.txt_frecuenciaCardiaca_crear)
                     val estaEsterilizado = spinnerEstaEsterilizado.selectedItem.toString()
-
 
                     idMascota.error = null
                     nombre.error = null
@@ -64,13 +62,12 @@ class crear_Mascota : AppCompatActivity() {
                             .bddAplicacion!!.crearMascota(newMascota)
 
                         if(respuesta) {
-
                             val data = Intent()
-                            data.putExtra("message", "El mascota se ha creado exitosamente")
+                            data.putExtra("message", "La mascota se ha creado exitosamente")
                             setResult(RESULT_OK, data)
                             finish()
                         }else{
-                            mostrarSnackbar("Hubo un problema en la creacion del mascota")
+                            mostrarSnackbar("Hubo un problema en la creacion de la mascota")
                         }
                     }
 
