@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_grey"
+    tools:context=".MainActivity"
+    >
+
+    <RelativeLayout
+        android:id="@+id/topLayoutNot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+
+        <TextView
+            android:id="@+id/textViewNot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="left"
+            android:text="Facebook"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="4dp"/>
+
+
+        <View
+            android:id="@+id/blueBoxNot"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_below="@id/textViewNot"
+            android:background="@color/white" />
+
+
+        <LinearLayout
+            android:id="@+id/buttonsLayoutNot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/blueBoxNot"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:background="@color/white">
+
+            <Button
+                android:id="@+id/btnInicioNot"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Inicio"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginEnd="2dp"/>
+
+            <Button
+                android:id="@+id/btnNotificacionesNot"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Notificaciones"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginStart="2dp"/>
+
+        </LinearLayout>
+
+
+        <View
+            android:id="@+id/grayBoxNot"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:layout_below="@id/buttonsLayoutNot"
+            android:background="@color/light_grey" />
+
+    </RelativeLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewNot"
+        android:layout_width="match_parent"
+        android:layout_height="630dp"
+        android:layout_below="@id/topLayoutNot"
+        android:background="@color/white"
+        />
+
+
+</RelativeLayout>

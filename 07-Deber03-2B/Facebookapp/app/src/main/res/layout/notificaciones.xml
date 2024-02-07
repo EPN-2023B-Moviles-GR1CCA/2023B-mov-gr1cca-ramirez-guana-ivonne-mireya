@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="2dp">
+
+    <RelativeLayout
+        android:id="@+id/grupo1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        >
+
+        <ImageView
+            android:id="@+id/imgPerfilNot"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/perfil1" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/imgPerfilNot"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvNombreNot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Victoria Meza ha compartido una imagen de Caja de peliculas"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/tvTiempoNot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:text="3 hrs"
+                android:textColor="@color/grey"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

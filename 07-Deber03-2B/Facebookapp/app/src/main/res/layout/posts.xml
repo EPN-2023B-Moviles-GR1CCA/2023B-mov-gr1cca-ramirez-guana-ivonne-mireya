@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/rellay1"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/imgView_proPic"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/perfil1"/>
+        
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/imgView_proPic"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_nombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A"
+                android:textColor="@color/black"
+                android:textSize="17sp"/>
+            <TextView
+                android:id="@+id/tv_tiempo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:text="11 hrs"
+                android:textColor="@color/grey"
+                android:textSize="13sp"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_below="@+id/rellay1"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Orgulloso de mis tannies"
+        android:textColor="@color/black"
+        android:textSize="16sp"/>
+    <ImageView
+        android:id="@+id/imgView_postPic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvStatus"
+        android:layout_marginTop="5dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+
+        android:src="@drawable/bts"/>
+    <RelativeLayout
+        android:id="@+id/rellay2"
+        android:layout_below="@+id/imgView_postPic"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/like" />
+
+            <TextView
+                android:id="@+id/likes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="30"
+                android:textColor="@color/black"
+                android:textSize="11sp" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/corazon" />
+
+            <TextView
+                android:id="@+id/corazones"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="30"
+                android:textColor="@color/black"
+                android:textSize="11sp" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/divertido" />
+
+            <TextView
+                android:id="@+id/divertidos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="30"
+                android:textColor="@color/black"
+                android:textSize="11sp" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/enamorado" />
+
+            <TextView
+                android:id="@+id/enamorados"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="30"
+                android:textColor="@color/black"
+                android:textSize="11sp" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/triste" />
+
+            <TextView
+                android:id="@+id/molestos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="30"
+                android:textColor="@color/black"
+                android:textSize="11sp" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/molesto" />
+
+            <TextView
+                android:id="@+id/tristes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="30"
+                android:textColor="@color/black"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvComentario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="1 comentarios"
+            android:textColor="@color/black"
+            android:textSize="11sp" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imgViewLinea"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/rellay2"
+        android:layout_marginTop="10dp"
+        android:background="@color/light_grey"/>
+    <LinearLayout
+        android:id="@+id/botones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgViewLinea"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="50dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_like_btn"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Me gusta"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="50dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_comment_btn"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Comentar"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="50dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_share_btn"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Compartir"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"/>
+
+</RelativeLayout>
