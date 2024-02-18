@@ -38,7 +38,6 @@ class ReciclerViewNotificaciones(
     // Setear los datos para la iteracion
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val notificacionActual = this.lista[position]
-
         holder.textoTextView.text = notificacionActual.texto
         holder.horaTextView.text = notificacionActual.horaNot
         // Load and set profile picture using the propic ID

@@ -24,7 +24,7 @@ class BaseDatos {
                 )
             arregloNotificaciones
                 .add(
-                    Notificacion(1,R.drawable.perfil4,"Enrique Lopez ha dado like a tu última publicación", "3 hrs")
+                    Notificacion(1,R.drawable.perfil4,"Anthony Villacis ha dado like a tu última publicación", "3 hrs")
                 )
             arregloNotificaciones
                 .add(
@@ -34,6 +34,11 @@ class BaseDatos {
                 .add(
                     Notificacion(3,R.drawable.perfil3,"Mireya Ramirez ha modificado su foto de perfil", "24 hrs")
                 )
+            arregloNotificaciones
+                .add(
+                    Notificacion(4,R.drawable.perfil1,"Addicción Asiatica a subido un nuevo video", "2 diás")
+                )
+
         }
     }
 }
