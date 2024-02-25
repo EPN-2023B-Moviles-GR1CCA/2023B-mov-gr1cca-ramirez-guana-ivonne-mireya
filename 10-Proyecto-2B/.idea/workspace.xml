@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fa6253dd-994a-46b0-b1dd-e9cc5c3833f4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/app/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/app/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/app/proguard-rules.pro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/app/src/androidTest/java/com/example/examen_firebase/ExampleInstrumentedTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/app/src/main/java/com/example/examen_firebase/MainActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/app/src/main/res/drawable/ic_launcher_foreground.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/app/src/main/res/mipmap-hdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/app/src/main/res/mipmap-mdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/app/src/main/res/values-night/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/app/src/main/res/xml/backup_rules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/app/src/main/res/xml/data_extraction_rules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/app/src/test/java/com/example/examen_firebase/ExampleUnitTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/gradle.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09-Examen-2B/examen_firebase/settings.gradle.kts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2cYbPlLxSSlYrCdleSmnvI7yAkd" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "last_opened_file_path": "C:/Users/LENOVO/Desktop/A.Moviles.R/2023B-mov-gr1cca-ramirez-guana-ivonne-mireya/10-Proyecto-2B/CalendarioLunar"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fa6253dd-994a-46b0-b1dd-e9cc5c3833f4" name="Changes" comment="" />
+      <created>1708291436323</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1708291436323</updated>
+    </task>
+    <servers />
+  </component>
+</project>
