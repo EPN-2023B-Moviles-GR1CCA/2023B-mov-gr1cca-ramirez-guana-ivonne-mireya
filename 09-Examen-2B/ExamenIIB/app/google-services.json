@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "960430586430",
+    "project_id": "exameniib-dcfff",
+    "storage_bucket": "exameniib-dcfff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:960430586430:android:2c9b182e43a28b95c26f6f",
+        "android_client_info": {
+          "package_name": "com.example.ramirezivonne_examenb2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDozJxBr-SCBw9f8-rDs3z3BZDxHX4TCsc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

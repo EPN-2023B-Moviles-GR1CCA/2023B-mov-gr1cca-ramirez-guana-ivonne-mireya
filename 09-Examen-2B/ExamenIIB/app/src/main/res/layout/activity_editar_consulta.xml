@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#25674DDA"
+    tools:context=".EditarConsulta">
+
+    <TextView
+        android:id="@+id/tv_historialConsulta_consulta_editar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="#Historial"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_EditarConsulta"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtIn_anioC_editar"
+        android:layout_width="333dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_historialConsulta_consulta_editar"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_historialConsulta_consulta_editar"
+        app:layout_constraintTop_toBottomOf="@+id/tv_historialConsulta_consulta_editar" />
+
+    <TextView
+        android:id="@+id/tv_EditarConsulta"
+        android:layout_width="326dp"
+        android:layout_height="58dp"
+        android:text="Editar Consulta"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.364"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <TextView
+        android:id="@+id/tv_nombre_consulta_editar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="124dp"
+        android:text="Es Presencial(SI/NO)"
+        app:layout_constraintEnd_toEndOf="@+id/tv_EditarConsulta"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_EditarConsulta"
+        app:layout_constraintTop_toBottomOf="@+id/tv_EditarConsulta" />
+
+    <TextView
+        android:id="@+id/tv_motivo_consulta_editar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Motivo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.414" />
+
+    <TextView
+        android:id="@+id/tv_peso_consulta_editar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Peso"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.082"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.561" />
+
+    <TextView
+        android:id="@+id/tv_recomendacion_consulta_editar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recomendacion"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.105"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.727" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtIn_nombreC_editar"
+        android:layout_width="333dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_motivo_consulta_editar"
+        app:layout_constraintEnd_toEndOf="@+id/tv_nombre_consulta_editar"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_nombre_consulta_editar"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nombre_consulta_editar"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtIn_motivoC_editar"
+        android:layout_width="333dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_peso_consulta_editar"
+        app:layout_constraintEnd_toEndOf="@+id/tv_motivo_consulta_editar"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_motivo_consulta_editar"
+        app:layout_constraintTop_toBottomOf="@+id/tv_motivo_consulta_editar"
+        app:layout_constraintVertical_bias="0.03" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtIn_pesoC_editar"
+        android:layout_width="333dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_recomendacion_consulta_editar"
+        app:layout_constraintEnd_toEndOf="@+id/tv_peso_consulta_editar"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_peso_consulta_editar"
+        app:layout_constraintTop_toBottomOf="@+id/tv_peso_consulta_editar"
+        app:layout_constraintVertical_bias="0.071" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtIn_recomendacionC_editar"
+        android:layout_width="333dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_recomendacion_consulta_editar"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_recomendacion_consulta_editar"
+        app:layout_constraintTop_toBottomOf="@+id/tv_recomendacion_consulta_editar" />
+
+    <Button
+        android:id="@+id/btn_editar_consulta"
+        android:layout_width="201dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="60dp"
+        android:backgroundTint="#023E8A"
+        android:text="Guardar Cambios"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtIn_recomendacionC_editar" />
+
+    <Button
+        android:id="@+id/btn_cancelar_consulta_editar"
+        android:layout_width="115dp"
+        android:layout_height="39dp"
+        android:backgroundTint="#0077B6"
+        android:text="Cancelar"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_editar_consulta"
+        app:layout_constraintVertical_bias="0.202" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
